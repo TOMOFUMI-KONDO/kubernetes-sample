@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-container-deployment
+spec:
+  selector:
+    matchLabels:
+      app: go-container-app
+  template:
+    metadata:
+      labels:
+        app: go-container-app
+    spec:
+      containers:
+        - name: go-container
+          image: tomok0n/go-container-image:latest
